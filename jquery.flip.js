@@ -118,7 +118,7 @@ $.fn.revertFlip = function(){
 		var $this = $(this);
 		$this.flip($this.data('flipRevertedSettings'));		
 	});
-}
+};
 
 $.fn.flip = function(settings){
     return this.each( function() {
@@ -133,19 +133,15 @@ $.fn.flip = function(settings){
 				switch(direction)
 				{
 				case "tb":
-				  return "bt"
-				  break;
+				  return "bt";
 				case "bt":
-				  return "tb"
-				  break;
+				  return "tb";
 				case "lr":
-				  return "rl"
-				  break;
+				  return "rl";
 				case "rl":
-				  return "lr"
-				  break;				  
+				  return "lr";		  
 				default:
-				  return "bt"
+				  return "bt";
 				}
 			})(settings.direction),
 			bgColor: acceptHexColor(settings.color) || "#999",
@@ -155,7 +151,7 @@ $.fn.flip = function(settings){
             onBefore: settings.onBefore || function(){},
             onEnd: settings.onEnd || function(){},
             onAnimation: settings.onAnimation || function(){}
-		}
+		};
 		
 		$this
 			.data('flipRevertedSettings',revertedSettings)
@@ -190,7 +186,7 @@ $.fn.flip = function(settings){
 			.data('flipLock',1)
             .appendTo("body")
             .html("")
-            .css({visibility:"visible",position:"absolute",left:flipObj.left,top:flipObj.top,margin:0,zIndex:9999});
+            .css({visibility:"visible",position:"absolute",left:flipObj.left,top:flipObj.top,margin:0,zIndex:9999,"-webkit-box-shadow":"0px 0px 0px #000","-moz-box-shadow":"0px 0px 0px #000"});
 
         var defaultStart=function() {
             return {
