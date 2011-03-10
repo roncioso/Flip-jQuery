@@ -148,6 +148,8 @@ $.fn.flip = function(settings){
 			color: acceptHexColor(settings.bgColor) || $this.css("background-color"),
 			content: $this.html(),
 			speed: settings.speed || 500,
+			easingIn: settings.easingIn || 'easeInQuad',
+			easingOut: settings.easingOut || 'easeOutQuad',
             onBefore: settings.onBefore || function(){},
             onEnd: settings.onEnd || function(){},
             onAnimation: settings.onAnimation || function(){}
@@ -166,6 +168,8 @@ $.fn.flip = function(settings){
             direction: settings.direction || "tb",
             toColor: acceptHexColor(settings.color) || "#999",
             speed: settings.speed || 500,
+			easingIn: settings.easingIn || 'easeInQuad',
+			easingOut: settings.easingOut || 'easeOutQuad',
             top: $this.offset().top,
             left: $this.offset().left,
             target: settings.content || null,
@@ -311,13 +315,13 @@ $.fn.flip = function(settings){
             $clone.dequeue();
         });
 
-        $clone.animate(dirOption.first,flipObj.speed);
+        $clone.animate(dirOption.first,flipObj.speed,flipObj.easingIn);
 
         $clone.queue(function(){
             flipObj.onAnimation($clone,$this);
             $clone.dequeue();
         });
-        $clone.animate(dirOption.second,flipObj.speed);
+        $clone.animate(dirOption.second,flipObj.speed,flipObj.easingOut);
 
         $clone.queue(function(){
             if (!flipObj.dontChangeColor) {
