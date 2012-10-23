@@ -148,7 +148,7 @@ $.fn.flip = function(settings){
 			color: acceptHexColor(settings.bgColor) || $this.css("background-color"),
 			content: $this.html(),
 			speed: settings.speed || 500,
-            onBefore: settings.onBefore || function(){},
+            onBefore: settings.onBeforeRevert || function(){},
             onEnd: settings.onRevertEnd || function(){},            
             onAnimation: settings.onAnimation || function(){}
 		};
