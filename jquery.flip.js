@@ -149,7 +149,7 @@ $.fn.flip = function(settings){
 			content: $this.html(),
 			speed: settings.speed || 500,
             onBefore: settings.onBefore || function(){},
-            onEnd: settings.onEnd || function(){},
+            onEnd: settings.onRevertEnd || function(){},            
             onAnimation: settings.onAnimation || function(){}
 		};
 		
