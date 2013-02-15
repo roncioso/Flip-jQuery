@@ -41,7 +41,7 @@ var isIE6orOlder=function() {
     // Not leadingWhiteSpace is to separate IE family from, well who knows?
     // Maybe some version of Opera?
     // The second guess behind this is that IE7+  will keep supporting maxHeight in the future.
-	
+
 	// First guess changed to dean edwards ie sniffing http://dean.edwards.name/weblog/2007/03/sniff/
     return (/*@cc_on!@*/false && (typeof document.body.style.maxHeight === "undefined"));
 };
@@ -114,9 +114,11 @@ $.extend( $.fx.step, {
 });
 
 $.fn.revertFlip = function(){
-	return this.each( function(){
+	return this.each( function(settings){
 		var $this = $(this);
-		$this.flip($this.data('flipRevertedSettings'));		
+		var reverted_obj = $(this).data('flipRevertedSettings');
+		reverted_obj.onEnd =  settings.onEnd || function(){};
+		$this.flip($this.data('flipRevertedSettings'));
 	});
 };
 
@@ -127,7 +129,7 @@ $.fn.flip = function(settings){
         if($this.data('flipLock')){
             return false;
         }
-		
+
 		var revertedSettings = {
 			direction: (function(direction){
 				switch(direction)
@@ -139,7 +141,7 @@ $.fn.flip = function(settings){
 				case "lr":
 				  return "rl";
 				case "rl":
-				  return "lr";		  
+				  return "lr";
 				default:
 				  return "bt";
 				}
@@ -152,7 +154,7 @@ $.fn.flip = function(settings){
             onEnd: settings.onEnd || function(){},
             onAnimation: settings.onAnimation || function(){}
 		};
-		
+
 		$this
 			.data('flipRevertedSettings',revertedSettings)
 			.data('flipLock',1)
