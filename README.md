@@ -1,11 +1,14 @@
-= Flip-jQuery v0.9.9++ =
+Flip-jQuery v0.9.9++
+====================
 
-== What is Flip? ==
+What is Flip?
+-------------
 
 Flip is a jQuery plugin that will flip easily your elements in four directions.
 
 
-== How to use? ==
+How to use?
+-----------
 
 Like every jquery plugin, just chain it:
 
@@ -14,7 +17,8 @@ Like every jquery plugin, just chain it:
     })
 
 
-== How to change content? ==
+How to change content?
+----------------------
 
 Add content params in this way:
 
@@ -24,7 +28,8 @@ Add content params in this way:
     })
 
 
-== How to add callbacks? ==
+How to add callbacks?
+---------------------
 
 There are three available callbacks: onBefore, onAnimation, onEnd
 
@@ -42,14 +47,16 @@ There are three available callbacks: onBefore, onAnimation, onEnd
     })
 
 
-== How to revert a flip? ==
+How to revert a flip?
+---------------------
 
 There's an "hidden" method called revertFlip: as it says, revert a flip to the previous state
 
     $("#flipbox").revertFlip()
 
 
-== some options ==
+Some options
+------------
 
 Here are all options available:
 
@@ -62,13 +69,15 @@ Here are all options available:
 * onEnd         - Synchronous function excuted after animation's end
 
 
-== other options ==
+Other options
+-------------
 
 * bgColor           - the inital (pre-flip) background color (default: the targets 'background-color' OR '#999')
 * dontChangeColor   - does not apply the 'color' option to the finished result (default: false)
 
 
-== methods ==
+Methods
+-------
 
 * revertFlip()
 * flip()
