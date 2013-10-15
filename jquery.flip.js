@@ -218,8 +218,8 @@ $.fn.flip = function(settings){
                     borderLeftWidth: waist,
                     borderRightWidth: waist,
                     borderBottomWidth: 0,
-                    borderTopColor: '#999',
-                    borderBottomColor: '#999',
+                    borderTopColor: acceptHexColor(settings.bgColor) || $this.css("background-color"),
+                    borderBottomColor: acceptHexColor(settings.color) || "#000",
                     top: (flipObj.top+(flipObj.height/2)),
                     left: (flipObj.left-waist)},
                 "second": {
@@ -244,8 +244,8 @@ $.fn.flip = function(settings){
                     borderLeftWidth: 0,
                     borderRightWidth: 0,
                     borderBottomWidth: waist,
-                    borderLeftColor: '#999',
-                    borderRightColor: '#999',
+                    borderLeftColor: acceptHexColor(settings.bgColor) || $this.css("background-color"),
+                    borderRightColor: acceptHexColor(settings.color) || "#000",
                     top: flipObj.top-waist,
                     left: flipObj.left+(flipObj.width/2)},
                 "second": {
