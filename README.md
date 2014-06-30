@@ -28,11 +28,11 @@ Here's a basic example to show you how to Flip!
 
 	</head>
 	<body>
-		<button class = "flip">Flip</button>
-		<div style= "border: 2px solid red; width: 20%; height: 40%" class = "box">
+		<button class ="flip">Flip</button>
+		<div style="border: 2px solid red; width: 20%; height: 40%" class = "box">
 			"Let's Flip this!"
 		</div>
-		<button class = "flipBack">Flip Back</button>
+		<button class ="flipBack">Flip Back</button>
 	</body>
 	<script type="text/javascript">
 		$(".flip").on("click", flipDiv)
@@ -66,12 +66,9 @@ $(".box").flip({
 	onAnimation: console.log("We are flipping"),
 	onAfter: console.log("We finished flipping")
 })
-
-
 ```
 
-
-There are many ways to customize the flip effect. Within the "flip" function you can add various options to change the flip to your liking. Below are the listed options.
+There are many ways to customize the flip effect; within the "flip" function you can add various options to change the flip to your liking. Below are the listed options and how to change them.
 
 ####content
 Defines the new content of the flipped box. It works with: html, text or a jQuery object ex:$("selector"). In the example above, the div reads "Let's flip this!" however, after the click, the div reads "We've been flipped!"
@@ -80,7 +77,7 @@ The direction where to flip. Possible values: 'tb', 'bt', 'lr', 'rl'. The defaul
 ####color
 After the flip, the background will change to this color. In the example above the div is white however changes to blue after the flip.
 ####speed
-Speed of the two parts of the animation. Accepts a range of numbers; the smaller the number, the faster the flip. The default speed is 500.
+Speed of the two parts of the animation. Accepts either a number value or the words "slow" or "fast"; the smaller the number, the faster the flip. The default speed is 500.
 ####onBefore
 Synchronous function excuted before the animation starts.
 ####onAnimation
