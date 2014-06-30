@@ -1,7 +1,7 @@
 Flip!
 =========
 
-An easy to use jQuery plugin that allows you to flip elements in four directions.
+An easy to use jQuery plugin that allows the flipping of elements in one of four directions.
 
 Installation
 --------------
@@ -13,7 +13,7 @@ Add the minified.js version of Flip! to your project and insert the following sc
 ```
 
 
-Flip! requires the latest versions of [jQuery](http://jquery.com/download/) and [jQuery UI](http://jqueryui.com/download/) ; link the jQuery and jQuery UI script tags before Flip!.
+Flip! requires the latest versions of [jQuery](http://jquery.com/download/) and [jQuery UI](http://jqueryui.com/download/) ; link the jQuery and jQuery UI script tags before the minified Flip.js.
 
 
 Example
@@ -56,29 +56,35 @@ Here's a basic example to show you how to Flip!
 
 Options
 --------------
+```js
+$(".box").flip({
+	direction:"tb",
+	content: "We've been flipped!",
+	color: "blue",
+	speed: 100,
+	onBefore: console.log("Have not flipped yet"),
+	onAnimation: console.log("We are flipping"),
+	onAfter: console.log("We finished flipping")
+})
 
-There are many ways to customize the flip effect. Within the "flip" function, you can add various options to change the flip to your liking. Below are the listed options to add to the flip function. 
 
+```
+
+
+There are many ways to customize the flip effect. Within the "flip" function you can add various options to change the flip to your liking. Below are the listed options.
 
 ####content
-
 Defines the new content of the flipped box. It works with: html, text or a jQuery object ex:$("selector"). In the example above, the div reads "Let's flip this!" however, after the click, the div reads "We've been flipped!"
-
 ####direction
 The direction where to flip. Possible values: 'tb', 'bt', 'lr', 'rl'. The default direction is tb. 
-
 ####color
 After the flip, the background will change to this color. In the example above the div is white however changes to blue after the flip.
-
 ####speed
 Speed of the two parts of the animation. Accepts a range of numbers; the smaller the number, the faster the flip. The default speed is 500.
-
 ####onBefore
 Synchronous function excuted before the animation starts.
-
 ####onAnimation
 Synchronous function excuted at half animation.
-
 ####onEnd
 Synchronous function excuted after animation's end.
 
