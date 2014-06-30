@@ -1,6 +1,5 @@
 Flip!
 =========
-
 An easy to use jQuery plugin that allows the flipping of elements in one of four directions.
 
 Installation
@@ -12,9 +11,7 @@ Add the minified.js version of Flip! to your project and insert the following sc
 <script src="[path to the file]/jquery.flip.min.js"></script>
 ```
 
-
 Flip! requires the latest versions of [jQuery](http://jquery.com/download/) and [jQuery UI](http://jqueryui.com/download/) ; link the jQuery and jQuery UI script tags before the minified Flip.js.
-
 
 Example
 --------------
